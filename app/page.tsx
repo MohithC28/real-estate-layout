@@ -1,6 +1,8 @@
 "use client";
 
-const PHONE = "919591977705"; 
+import { CSSProperties } from "react";
+
+const PHONE = "919591977705";
 const messageEN = encodeURIComponent("Hi, I want details in English");
 const messageKN = encodeURIComponent("Hi, I want details in Kannada");
 
@@ -10,7 +12,6 @@ const WHATSAPP_KN = `https://wa.me/${PHONE}?text=${messageKN}`;
 export default function Home() {
   return (
     <div style={page}>
-      {/* HERO SECTION */}
       <section style={hero}>
         <div style={overlay} />
 
@@ -18,6 +19,7 @@ export default function Home() {
 
         <div style={heroContent}>
           <h1 style={heroTitle}>Experience Luxury Living at Its Finest</h1>
+
           <p style={heroSubtitle}>
             Premium 30×40 Residential Sites • MUDA / RERA Approved
             <br />
@@ -33,28 +35,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BROCHURE */}
       <section id="brochure" style={card}>
         <h2 style={cardTitle}>📄 Download the Project Brochure</h2>
         <p style={cardText}>
-          Get layout plans, pricing, approvals & complete project details.
+          Get layout plans, pricing, approvals & full project details.
         </p>
         <a href="/brochure.pdf" target="_blank" style={primaryBtn}>
           Download Brochure
         </a>
       </section>
 
-      {/* CONTACT */}
       <section id="contact" style={card}>
         <h2 style={cardTitle}>💬 Enquire on WhatsApp</h2>
         <p style={cardText}>Instant pricing, photos & location.</p>
+
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
           <a href={WHATSAPP_EN} style={whButton}>🇬🇧 English</a>
           <a href={WHATSAPP_KN} style={whButton}>🇮🇳 Kannada</a>
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer style={footer}>
         <p style={footerText}>© {new Date().getFullYear()} Urban Crest Realty • All Rights Reserved</p>
       </footer>
@@ -62,14 +62,15 @@ export default function Home() {
   );
 }
 
-/* STYLES */
-const page = {
+/* ------- TYPE SAFE STYLES -------- */
+
+const page: CSSProperties = {
   fontFamily: "'Inter', sans-serif",
   background: "#f8fafc",
   paddingBottom: 80,
 };
 
-const hero = {
+const hero: CSSProperties = {
   position: "relative",
   height: "75vh",
   display: "flex",
@@ -81,7 +82,7 @@ const hero = {
   backgroundPosition: "center",
 };
 
-const overlay = {
+const overlay: CSSProperties = {
   position: "absolute",
   top: 0,
   left: 0,
@@ -90,7 +91,7 @@ const overlay = {
   background: "rgba(0,0,0,0.45)",
 };
 
-const brandTag = {
+const brandTag: CSSProperties = {
   position: "absolute",
   top: 20,
   left: 20,
@@ -104,37 +105,41 @@ const brandTag = {
   border: "1px solid rgba(255,255,255,0.3)",
 };
 
-const heroContent = {
+const heroContent: CSSProperties = {
   position: "relative",
   textAlign: "center",
   maxWidth: 750,
   padding: "0 20px",
 };
 
-const heroTitle = { fontSize: 44, fontWeight: 700, marginBottom: 10 };
-
-const heroSubtitle = { 
-  fontSize: 20, 
-  opacity: 0.9, 
-  lineHeight: "1.6",
-  marginBottom: 20 
+const heroTitle: CSSProperties = {
+  fontSize: 44,
+  fontWeight: 700,
+  marginBottom: 10,
 };
 
-const heroHighlight = {
+const heroSubtitle: CSSProperties = {
+  fontSize: 20,
+  opacity: 0.9,
+  lineHeight: "1.6",
+  marginBottom: 20,
+};
+
+const heroHighlight: CSSProperties = {
   fontSize: 22,
   fontWeight: 700,
   color: "#ffdd57",
   marginBottom: 28,
 };
 
-const heroBtns = {
+const heroBtns: CSSProperties = {
   display: "flex",
   justifyContent: "center",
   gap: "16px",
   flexWrap: "wrap",
 };
 
-const primaryBtn = {
+const primaryBtn: CSSProperties = {
   background: "#1e3a8a",
   color: "white",
   padding: "12px 22px",
@@ -144,7 +149,7 @@ const primaryBtn = {
   fontSize: 16,
 };
 
-const outlineBtn = {
+const outlineBtn: CSSProperties = {
   border: "2px solid white",
   color: "white",
   padding: "12px 22px",
@@ -155,7 +160,7 @@ const outlineBtn = {
   background: "transparent",
 };
 
-const card = {
+const card: CSSProperties = {
   background: "white",
   maxWidth: 900,
   margin: "40px auto",
@@ -164,10 +169,19 @@ const card = {
   textAlign: "center",
 };
 
-const cardTitle = { fontSize: 26, fontWeight: 700, marginBottom: 8 };
-const cardText = { fontSize: 16, color: "#475569", marginBottom: 20 };
+const cardTitle: CSSProperties = {
+  fontSize: 26,
+  fontWeight: 700,
+  marginBottom: 8,
+};
 
-const whButton = {
+const cardText: CSSProperties = {
+  fontSize: 16,
+  color: "#475569",
+  marginBottom: 20,
+};
+
+const whButton: CSSProperties = {
   background: "#25D366",
   color: "#fff",
   padding: "14px 20px",
@@ -178,5 +192,12 @@ const whButton = {
   textAlign: "center",
 };
 
-const footer = { textAlign: "center", padding: 20, marginTop: 40 };
-const footerText = { fontSize: 14 };
+const footer: CSSProperties = {
+  textAlign: "center",
+  padding: 20,
+  marginTop: 40,
+};
+
+const footerText: CSSProperties = {
+  fontSize: 14,
+};
