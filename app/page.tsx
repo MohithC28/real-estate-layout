@@ -3,199 +3,155 @@
 import { CSSProperties } from "react";
 
 const PHONE = "919591977705";
-const messageEN = encodeURIComponent("Hi, I want details in English");
-const messageKN = encodeURIComponent("Hi, I want details in Kannada");
-
-const WHATSAPP_EN = `https://wa.me/${PHONE}?text=${messageEN}`;
-const WHATSAPP_KN = `https://wa.me/${PHONE}?text=${messageKN}`;
+const MSG_EN = encodeURIComponent("Hi, I want details about the Urban Crest Realty project.");
+const MSG_KN = encodeURIComponent("Hi, I want details in Kannada.");
+const WHATSAPP_EN = `https://wa.me/${PHONE}?text=${MSG_EN}`;
+const WHATSAPP_KN = `https://wa.me/${PHONE}?text=${MSG_KN}`;
 
 export default function Home() {
   return (
     <div style={page}>
+
+      {/* FULLSCREEN HERO */}
       <section style={hero}>
-        <div style={overlay} />
+        <div style={darkOverlay} />
 
-        <div style={brandTag}>Urban Crest Realty</div>
+        {/* BRAND TITLE */}
+        <h1 style={brandName}>Urban Crest Realty</h1>
 
-        <div style={heroContent}>
-          <h1 style={heroTitle}>Experience Luxury Living at Its Finest</h1>
+        {/* PROJECT DESCRIPTION */}
+        <p style={projectTitle}>Premium Residential Layout in Mysuru</p>
 
-          <p style={heroSubtitle}>
-            Premium 30×40 Residential Sites • MUDA / RERA Approved
-            <br />
-            Located in Yelachahalli, Yelwala — Next to KHB Layout
-          </p>
-
-          <h3 style={heroHighlight}>Bookings Are Now Open — Don’t Miss Out!</h3>
-
-          <div style={heroBtns}>
-            <a href="#brochure" style={primaryBtn}>View Brochure</a>
-            <a href="#contact" style={outlineBtn}>Enquire Now</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="brochure" style={card}>
-        <h2 style={cardTitle}>📄 Download the Project Brochure</h2>
-        <p style={cardText}>
-          Get layout plans, pricing, approvals & full project details.
+        <p style={projectSubtitle}>
+          Luxury 30×40 MUDA / RERA Approved Plots<br />
+          Situated in Yelachahalli, Yelwala — Beside KHB Layout
         </p>
-        <a href="/brochure.pdf" target="_blank" style={primaryBtn}>
-          Download Brochure
-        </a>
-      </section>
 
-      <section id="contact" style={card}>
-        <h2 style={cardTitle}>💬 Enquire on WhatsApp</h2>
-        <p style={cardText}>Instant pricing, photos & location.</p>
+        <p style={highlightText}>
+          Experience Luxury Living at Its Finest
+        </p>
 
-        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
-          <a href={WHATSAPP_EN} style={whButton}>🇬🇧 English</a>
-          <a href={WHATSAPP_KN} style={whButton}>🇮🇳 Kannada</a>
+        <p style={bookingText}>Bookings Now Open — Limited Plots Available</p>
+
+        {/* CTA BUTTONS */}
+        <div style={ctaRow}>
+          <a href={WHATSAPP_EN} style={ctaPrimary}>Enquire Now</a>
+          <a href={WHATSAPP_KN} style={ctaSecondary}>Kannada Enquiry</a>
         </div>
       </section>
 
+      {/* FOOTER */}
       <footer style={footer}>
-        <p style={footerText}>© {new Date().getFullYear()} Urban Crest Realty • All Rights Reserved</p>
+        <p style={footerText}>© {new Date().getFullYear()} Urban Crest Realty</p>
       </footer>
     </div>
   );
 }
 
-/* ------- TYPE SAFE STYLES -------- */
+
+/* ---------- STYLES ---------- */
 
 const page: CSSProperties = {
   fontFamily: "'Inter', sans-serif",
-  background: "#f8fafc",
-  paddingBottom: 80,
+  background: "#0f172a",
+  color: "white",
 };
 
 const hero: CSSProperties = {
   position: "relative",
-  height: "75vh",
+  height: "100vh",
   display: "flex",
-  alignItems: "center",
+  flexDirection: "column",
   justifyContent: "center",
-  color: "white",
-  backgroundImage: 'url("/layout-banner.jpg")',
+  alignItems: "center",
+  textAlign: "center",
+  padding: "0 20px",
+  backgroundImage: `url("/luxury-bg.jpg")`, // ← Replace with a luxury image
   backgroundSize: "cover",
   backgroundPosition: "center",
 };
 
-const overlay: CSSProperties = {
+const darkOverlay: CSSProperties = {
   position: "absolute",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100%",
-  background: "rgba(0,0,0,0.45)",
+  inset: 0,
+  background: "rgba(0,0,0,0.55)",
 };
 
-const brandTag: CSSProperties = {
-  position: "absolute",
-  top: 20,
-  left: 20,
-  background: "rgba(255,255,255,0.15)",
-  backdropFilter: "blur(6px)",
-  padding: "10px 18px",
-  borderRadius: 12,
-  fontWeight: 700,
-  fontSize: 18,
-  color: "#ffffff",
-  border: "1px solid rgba(255,255,255,0.3)",
-};
-
-const heroContent: CSSProperties = {
+const brandName: CSSProperties = {
   position: "relative",
-  textAlign: "center",
-  maxWidth: 750,
-  padding: "0 20px",
-};
-
-const heroTitle: CSSProperties = {
-  fontSize: 44,
-  fontWeight: 700,
-  marginBottom: 10,
-};
-
-const heroSubtitle: CSSProperties = {
-  fontSize: 20,
-  opacity: 0.9,
-  lineHeight: "1.6",
+  fontSize: 56,
+  fontWeight: 900,
+  letterSpacing: "2px",
   marginBottom: 20,
+  textTransform: "uppercase",
 };
 
-const heroHighlight: CSSProperties = {
-  fontSize: 22,
-  fontWeight: 700,
-  color: "#ffdd57",
-  marginBottom: 28,
-};
-
-const heroBtns: CSSProperties = {
-  display: "flex",
-  justifyContent: "center",
-  gap: "16px",
-  flexWrap: "wrap",
-};
-
-const primaryBtn: CSSProperties = {
-  background: "#1e3a8a",
-  color: "white",
-  padding: "12px 22px",
-  borderRadius: 10,
-  textDecoration: "none",
+const projectTitle: CSSProperties = {
+  position: "relative",
+  fontSize: 28,
   fontWeight: 600,
-  fontSize: 16,
+  opacity: 0.9,
+  marginBottom: 6,
 };
 
-const outlineBtn: CSSProperties = {
-  border: "2px solid white",
-  color: "white",
-  padding: "12px 22px",
-  borderRadius: 10,
-  textDecoration: "none",
-  fontWeight: 600,
-  fontSize: 16,
-  background: "transparent",
+const projectSubtitle: CSSProperties = {
+  position: "relative",
+  fontSize: 20,
+  lineHeight: 1.6,
+  opacity: 0.85,
+  marginBottom: 25,
 };
 
-const card: CSSProperties = {
-  background: "white",
-  maxWidth: 900,
-  margin: "40px auto",
-  padding: "32px",
-  borderRadius: 16,
-  textAlign: "center",
-};
-
-const cardTitle: CSSProperties = {
+const highlightText: CSSProperties = {
+  position: "relative",
   fontSize: 26,
   fontWeight: 700,
-  marginBottom: 8,
+  color: "#ffdd57",
+  marginBottom: 15,
 };
 
-const cardText: CSSProperties = {
-  fontSize: 16,
-  color: "#475569",
-  marginBottom: 20,
-};
-
-const whButton: CSSProperties = {
-  background: "#25D366",
-  color: "#fff",
-  padding: "14px 20px",
-  borderRadius: 10,
-  textDecoration: "none",
+const bookingText: CSSProperties = {
+  position: "relative",
+  fontSize: 20,
   fontWeight: 600,
-  minWidth: 120,
-  textAlign: "center",
+  marginBottom: 35,
+  opacity: 0.95,
+};
+
+const ctaRow: CSSProperties = {
+  position: "relative",
+  display: "flex",
+  gap: 16,
+  flexWrap: "wrap",
+  justifyContent: "center",
+};
+
+const ctaPrimary: CSSProperties = {
+  background: "#1e3a8a",
+  padding: "14px 26px",
+  borderRadius: 10,
+  color: "white",
+  fontWeight: 700,
+  fontSize: 18,
+  textDecoration: "none",
+  letterSpacing: 0.5,
+};
+
+const ctaSecondary: CSSProperties = {
+  border: "2px solid white",
+  padding: "14px 26px",
+  borderRadius: 10,
+  color: "white",
+  fontWeight: 700,
+  fontSize: 18,
+  textDecoration: "none",
 };
 
 const footer: CSSProperties = {
   textAlign: "center",
   padding: 20,
   marginTop: 40,
+  opacity: 0.7,
 };
 
 const footerText: CSSProperties = {
