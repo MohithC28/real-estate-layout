@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
-
-const PHONE = "919591977705"; // replace with client number
+const PHONE = "919591977705"; 
 const messageEN = encodeURIComponent("Hi, I want details in English");
 const messageKN = encodeURIComponent("Hi, I want details in Kannada");
 
@@ -16,13 +14,12 @@ export default function Home() {
       <section style={hero}>
         <div style={overlay} />
 
-        {/* BRAND TAG */}
         <div style={brandTag}>Urban Crest Realty</div>
 
         <div style={heroContent}>
           <h1 style={heroTitle}>Experience Luxury Living at Its Finest</h1>
           <p style={heroSubtitle}>
-            Premium 30×40 Residential Sites • MUDA / RERA Approved  
+            Premium 30×40 Residential Sites • MUDA / RERA Approved
             <br />
             Located in Yelachahalli, Yelwala — Next to KHB Layout
           </p>
@@ -36,22 +33,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BROCHURE BOX */}
+      {/* BROCHURE */}
       <section id="brochure" style={card}>
         <h2 style={cardTitle}>📄 Download the Project Brochure</h2>
         <p style={cardText}>
-          Get detailed layout plans, pricing, approvals, and full project highlights.
+          Get layout plans, pricing, approvals & complete project details.
         </p>
         <a href="/brochure.pdf" target="_blank" style={primaryBtn}>
           Download Brochure
         </a>
       </section>
 
-      {/* CONTACT BOX */}
+      {/* CONTACT */}
       <section id="contact" style={card}>
         <h2 style={cardTitle}>💬 Enquire on WhatsApp</h2>
-        <p style={cardText}>Get price, photos, videos & location instantly.</p>
-        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+        <p style={cardText}>Instant pricing, photos & location.</p>
+        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
           <a href={WHATSAPP_EN} style={whButton}>🇬🇧 English</a>
           <a href={WHATSAPP_KN} style={whButton}>🇮🇳 Kannada</a>
         </div>
@@ -65,10 +62,7 @@ export default function Home() {
   );
 }
 
-//
-// Styles
-//
-
+/* STYLES */
 const page = {
   fontFamily: "'Inter', sans-serif",
   background: "#f8fafc",
@@ -96,7 +90,6 @@ const overlay = {
   background: "rgba(0,0,0,0.45)",
 };
 
-// BRAND NAME AT TOP
 const brandTag = {
   position: "absolute",
   top: 20,
@@ -107,7 +100,7 @@ const brandTag = {
   borderRadius: 12,
   fontWeight: 700,
   fontSize: 18,
-  color: "#f8f9fa",
+  color: "#ffffff",
   border: "1px solid rgba(255,255,255,0.3)",
 };
 
@@ -118,20 +111,15 @@ const heroContent = {
   padding: "0 20px",
 };
 
-const heroTitle = { 
-  fontSize: 44, 
-  fontWeight: 700, 
-  marginBottom: 16 
-};
+const heroTitle = { fontSize: 44, fontWeight: 700, marginBottom: 10 };
 
 const heroSubtitle = { 
   fontSize: 20, 
   opacity: 0.9, 
-  lineHeight: "1.5",
+  lineHeight: "1.6",
   marginBottom: 20 
 };
 
-// BOOKINGS OPEN LINE
 const heroHighlight = {
   fontSize: 22,
   fontWeight: 700,
@@ -154,7 +142,6 @@ const primaryBtn = {
   textDecoration: "none",
   fontWeight: 600,
   fontSize: 16,
-  boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
 };
 
 const outlineBtn = {
@@ -174,22 +161,11 @@ const card = {
   margin: "40px auto",
   padding: "32px",
   borderRadius: 16,
-  boxShadow: "0 8px 25px rgba(0,0,0,0.05)",
   textAlign: "center",
 };
 
-const cardTitle = {
-  fontSize: 26,
-  fontWeight: 700,
-  marginBottom: 8,
-  color: "#1e293b",
-};
-
-const cardText = {
-  fontSize: 16,
-  color: "#475569",
-  marginBottom: 20,
-};
+const cardTitle = { fontSize: 26, fontWeight: 700, marginBottom: 8 };
+const cardText = { fontSize: 16, color: "#475569", marginBottom: 20 };
 
 const whButton = {
   background: "#25D366",
@@ -202,13 +178,5 @@ const whButton = {
   textAlign: "center",
 };
 
-const footer = {
-  textAlign: "center",
-  padding: "20px 0",
-  marginTop: 40,
-  color: "#64748b",
-};
-
-const footerText = {
-  fontSize: 14,
-};
+const footer = { textAlign: "center", padding: 20, marginTop: 40 };
+const footerText = { fontSize: 14 };
